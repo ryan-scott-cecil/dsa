@@ -1,7 +1,7 @@
 from insertion_sort import *
 import time
 
-run_cases = [([4, 3, 2, 1],[1, 2, 3, 4]), ([9, 5, -3, 7],[-3, 5, 7, 9])]
+test_cases = [([4, 3, 2, 1],[1, 2, 3, 4]), ([9, 5, -3, 7],[-3, 5, 7, 9])]
 
 def test(input1, expected_output):
     print("--------------------------------------")
