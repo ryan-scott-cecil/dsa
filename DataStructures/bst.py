@@ -40,7 +40,7 @@ class BSTNode:
     #     self.right = BSTNode(val)
 
     def get_min(self):
-        next = self
+        min = self
         while min.left:
             min = min.left
         return min.val
