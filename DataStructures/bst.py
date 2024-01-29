@@ -120,3 +120,4 @@ class BSTNode:
             left_height = self.left.height()
         if self.right is not None:
             right_height = self.right.height()
+        return max(left_height, right_height) + 1
