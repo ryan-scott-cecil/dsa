@@ -73,3 +73,21 @@ class Trie:
             else:
                 break
         return prefix
+    
+    # advanced_find_matches is an advanced word filter that can catch variations of bad words efficiently.
+    # for example, if the bad word id "darn", we want to filter variations like 'd@rn', 'd4rn', or 'd@rn1t'
+    def advanced_find_mathces(self, document, variations):
+        matches = set()
+        for i in range(len(document)):
+            level = self.root
+            for j in range(i,  len(document)):
+                ch = document[j]
+                if ch in variations:
+                    ch = variations[ch]
+                if ch in level:
+                    level = level[ch]
+                else:
+                    level = self.root
+                    break
+                if self.end_symbol in level:
+                    matches.add(document[i : j + 1])
